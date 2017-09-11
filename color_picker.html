@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>便携式取色器</title>
+	<link rel="stylesheet" href="./color_picker.css" type="text/css">
+</head>
+<body>
+    <header><h1>便携式取色器</h1></header>
+    <div class="top_part clearfix">
+		<div class="img_and_colorblock clearfix">
+			<canvas id="canvas" width="450" height="300" class="left" ></canvas>
+			<div class="colorblock_wrapper left">
+				<span>色块显示区域</span>
+				<div id="colorblock"></div>
+				<span id="rgb_value"></span>
+			</div>
+		</div>
+		<div class="operation_tips">
+			<label for="filepicker" class="right">使用本地图片</label>
+			<input type="file" class="right" id="filepicker">
+			<input type="button" value="保存色块至本地" id="color_saver_button">
+			<div class="tips"><p>点击图片获取点击位置的颜色值，点击按钮“使用本地图片”来使用本地图片。<br/>点击“保存色块至本地”按钮将颜色值放至浏览器本地存储，以便下次访问时显示。</p></div>
+		</div>
+	</div>
+	
+	<div class="saved_color clearfix" id="saved_color_area">
+		<span style="" >已保存的颜色值</span>
+	</div>
+<script src="./color_picker.js">
+	
+</script>
+</body>
+</html>
