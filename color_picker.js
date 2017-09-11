@@ -14,20 +14,13 @@ function windowToCanvas(x,y)
 		return {x:x-bbox.left,y:y-bbox.top};
 	}
 //读取颜色像素值的函数
-function pickColor()
+canvas.onclick=function(e)
 	{
-		canvas.onclick=function(e)
-		{
-			var point=windowToCanvas(e.clientX,e.clientY);
-			var data=ctx.getImageData(point.x,point.y,1,1).data;
-			color="rgba("+data[0]+","+data[1]+","+data[2]+","+(data[3])/255+")";
-			colorblock.style.background=color;
-			rgb_value.innerHTML=String(color);
-		}
-	}
-function display_rgb_value(x)
-	{
-		rgb_value.innerHTML=String(x);
+		var point=windowToCanvas(e.clientX,e.clientY);
+		var data=ctx.getImageData(point.x,point.y,1,1).data;
+		color="rgba("+data[0]+","+data[1]+","+data[2]+","+(data[3])/255+")";
+		colorblock.style.background=color;
+		rgb_value.innerHTML=String(color);
 	}
 //图片处理，目标是：1.图片不能超出画布，且图片比例不变。
 //2.画布至少一边被铺满
@@ -127,13 +120,4 @@ upload.onchange=function()
     		}
     	}		
     }
-function setup()
-	{
-		 pickColor();
- 		 retireveColorFromStorage();
-	}
-setup();
-
-   
-
-    
+retireveColorFromStorage();  

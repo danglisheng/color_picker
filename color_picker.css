@@ -75,6 +75,7 @@ input[type="file"]{
 	width:250px;
 	border:dashed 2px #777;
 	margin-top:15px;
+	padding:10px;
 }
 .saved_color{
 	width:800px;
